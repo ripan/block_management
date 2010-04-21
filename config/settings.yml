@@ -1,0 +1,5 @@
+# This file can be used to store universal constants that can be changed from within the application
+
+
+build_date_lmit: '2000-01-01'
+

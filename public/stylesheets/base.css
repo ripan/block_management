@@ -1,0 +1,584 @@
+/* style from scaffold.css for ActiveRecord error messages */
+.fieldWithErrors {
+    border: 1px solid red;
+    background-color: #f00;
+    float:left;
+    padding:0 1px;
+}
+
+.redborder{border:2px solid #f00;}
+#errorExplanation {
+  border: 2px solid red;
+  padding: 7px 0 7px 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  padding: 5px;
+}
+
+#errorExplanation li {
+  font-size: 12px;
+  list-style: square;
+	margin-left: 20px; /* why does the bullet go outside the parent? */
+}
+
+
+/* flash_div usage */
+div.flashNotice
+{
+  padding: 2px;
+  border: 1px solid #339900;
+  background-color: #99FF99;
+}
+
+div.flashError
+{
+  padding: 2px;
+  border: 1px solid  #993333;
+  background-color: #FF9999;
+}
+
+
+
+/* drop shadow support */
+
+/*necessities*/
+.highContrast {
+	position: relative;
+	/*color:#fff395;*/
+	/*color:#fff;*/
+}
+
+.highContrast span {
+	position: relative;
+}
+
+span.shadow {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	/*color: #666;*/
+}
+
+
+/* end of drop shadow support */
+
+
+/* begin tooltip.css */
+.tooltip {
+	position: absolute;
+	width: 240px;
+	background-color: rgb(255, 255, 234);
+	border: 1px solid black;
+	padding: 2px;
+	font-size: 12px;
+	margin: 1em;
+}
+
+.tooltip h1 {
+	height: auto;
+	margin-top: 0px;
+	margin-left: 0px;
+	background-color: rgb(106,106,106);
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.tooltip p {
+	padding: 2px;
+	margin-top: 0.5em;
+	line-height: 1.2em;
+}
+
+.tooltip .close {
+/*display: none;*/
+}
+
+/* end of tooltip.css */
+
+
+
+
+
+
+/* begin calendar.css */
+
+/* The main calendar widget.  DIV containing a table. */
+
+div.calendar { position: relative; }
+
+.calendar, .calendar table {
+  border: 1px solid #556;
+  font-size: 11px;
+  color: #000;
+  cursor: default;
+  background: #eef;
+  font-family: verdana,sans-serif;
+  width: 259px;
+}
+
+/* Header part -- contains navigation buttons and day names. */
+
+.calendar .button { /* "<<", "<", ">", ">>" buttons have this class */
+  text-align: center;    /* They are the navigation buttons */
+  padding: 2px;          /* Make the buttons seem like they're pressing */
+}
+
+.calendar .nav {
+  background: #778 url(menuarrow.gif) no-repeat 100% 100%;
+}
+
+.calendar thead .title { /* This holds the current "month, year" */
+  font-weight: bold;      /* Pressing it will take you to the current date */
+  text-align: center;
+  background: #fff;
+  color: #000;
+  padding: 2px;
+}
+
+.calendar thead .headrow { /* Row <TR> containing navigation buttons */
+  background: #778;
+  color: #fff;
+}
+
+.calendar thead .daynames { /* Row <TR> containing the day names */
+  background: #bdf;
+}
+
+.calendar thead .name { /* Cells <TD> containing the day names */
+  border-bottom: 1px solid #556;
+  padding: 2px;
+  text-align: center;
+  color: #000;
+}
+
+.calendar thead .weekend { /* How a weekend day name shows in header */
+  color: #a66;
+}
+
+.calendar thead .hilite { /* How do the buttons in header appear when hover */
+  background-color: #aaf;
+  color: #000;
+  border: 1px solid #04f;
+  padding: 1px;
+}
+
+.calendar thead .active { /* Active (pressed) buttons in header */
+  background-color: #77c;
+  padding: 2px 0px 0px 2px;
+}
+
+/* The body part -- contains all the days in month. */
+
+.calendar tbody .day { /* Cells <TD> containing month days dates */
+  width: 2em;
+  color: #456;
+  text-align: right;
+  padding: 2px 4px 2px 2px;
+}
+.calendar tbody .day.othermonth {
+  font-size: 80%;
+  color: #bbb;
+}
+.calendar tbody .day.othermonth.oweekend {
+  color: #fbb;
+}
+
+.calendar table .wn {
+  padding: 2px 3px 2px 2px;
+  border-right: 1px solid #000;
+  background: #bdf;
+}
+
+.calendar tbody .rowhilite td {
+  background: #def;
+}
+
+.calendar tbody .rowhilite td.wn {
+  background: #eef;
+}
+
+.calendar tbody td.hilite { /* Hovered cells <TD> */
+  background: #def;
+  padding: 1px 3px 1px 1px;
+  border: 1px solid #bbb;
+}
+
+.calendar tbody td.active { /* Active (pressed) cells <TD> */
+  background: #cde;
+  padding: 2px 2px 0px 2px;
+}
+
+.calendar tbody td.selected { /* Cell showing today date */
+  font-weight: bold;
+  border: 1px solid #000;
+  padding: 1px 3px 1px 1px;
+  background: #fff;
+  color: #000;
+}
+
+.calendar tbody td.weekend { /* Cells showing weekend days */
+  color: #a66;
+}
+
+.calendar tbody td.today { /* Cell showing selected date */
+  font-weight: bold;
+  color: #00f;
+}
+
+.calendar tbody .disabled { color: #999; }
+
+.calendar tbody .emptycell { /* Empty cells (the best is to hide them) */
+  visibility: hidden;
+}
+
+.calendar tbody .emptyrow { /* Empty row (some months need less than 6 rows) */
+  display: none;
+}
+
+/* The footer part -- status bar and "Close" button */
+
+.calendar tfoot .footrow { /* The <TR> in footer (only one right now) */
+  text-align: center;
+  background: #556;
+  color: #fff;
+}
+
+.calendar tfoot .ttip { /* Tooltip (status bar) cell <TD> */
+  background: #fff;
+  color: #445;
+  border-top: 1px solid #556;
+  padding: 1px;
+}
+
+.calendar tfoot .hilite { /* Hover style for buttons in footer */
+  background: #aaf;
+  border: 1px solid #04f;
+  color: #000;
+  padding: 1px;
+}
+
+.calendar tfoot .active { /* Active (pressed) style for buttons in footer */
+  background: #77c;
+  padding: 2px 0px 0px 2px;
+}
+
+/* Combo boxes (menus that display months/years for direct selection) */
+
+.calendar .combo {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  width: 4em;
+  cursor: default;
+  border: 1px solid #655;
+  background: #def;
+  color: #000;
+  font-size: 90%;
+  z-index: 100;
+}
+
+.calendar .combo .label,
+.calendar .combo .label-IEfix {
+  text-align: center;
+  padding: 1px;
+}
+
+.calendar .combo .label-IEfix {
+  width: 4em;
+}
+
+.calendar .combo .hilite {
+  background: #acf;
+}
+
+.calendar .combo .active {
+  border-top: 1px solid #46a;
+  border-bottom: 1px solid #46a;
+  background: #eef;
+  font-weight: bold;
+}
+
+.calendar td.time {
+  border-top: 1px solid #000;
+  padding: 1px 0px;
+  text-align: center;
+  background-color: #f4f0e8;
+}
+
+.calendar td.time .hour,
+.calendar td.time .minute,
+.calendar td.time .ampm {
+  padding: 0px 3px 0px 4px;
+  border: 1px solid #889;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.calendar td.time .ampm {
+  text-align: center;
+}
+
+.calendar td.time .colon {
+  padding: 0px 2px 0px 3px;
+  font-weight: bold;
+}
+
+.calendar td.time span.hilite {
+  border-color: #000;
+  background-color: #667;
+  color: #fff;
+}
+
+.calendar td.time span.active {
+  border-color: #f00;
+  background-color: #000;
+  color: #0f0;
+}
+
+/* end of calendar css */
+
+
+/* reports css */
+.even {
+	background-color: #ccc;
+	color: #333;
+}
+
+.report_table {
+	font-weight: 500;
+	color: #333;
+}
+
+.report_title {
+	font-size: medium;
+	color:#336699;
+	text-align: center;
+}
+
+.table_headings {
+	color: #336699;
+	text-align: left;
+}
+/* reports css END */
+
+
+.popup_close_button {
+	position: absolute; 
+	top: 12px; 
+	left: 20px;
+}
+
+/***************************/
+/*       Carousel          */
+/***************************/
+
+/**
+ * Copyright (c) 2006, Bill W. Scott
+ * All rights reserved.
+ *
+ * This work is licensed under the Creative Commons Attribution 2.5 License. To view a copy 
+ * of this license, visit http://creativecommons.org/licenses/by/2.5/ or send a letter to 
+ * Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+ *
+ * This work was created by Bill Scott (billwscott.com, looksgoodworkswell.com).
+ * 
+ * The only attribution I require is to keep this notice of copyright & license 
+ * in this original source file.
+ */
+
+/**
+ * Standard Configuration. It is advised that this section NOT be modified as the
+ * carousel.js expects the behavior outlined below.
+ **/
+ 
+.carousel-component { 
+	position:relative;
+	overflow:hidden;
+	visibility:visible; /* component turns it on when first item is rendered */
+}
+				
+.carousel-component ul.carousel-list { 
+	width:10000000px;
+	position:relative;
+	z-index:1; 
+}
+
+.carousel-component .carousel-list li { 
+	float:left;
+	list-style:none;
+	overflow:hidden;
+	margin-left: 0px;
+}
+
+.carousel-component .carousel-vertical li { 
+	margin-bottom:5px;
+	list-style:none;
+	overflow:hidden;
+	margin-left:-33px;
+	margin-top: 0px;
+}
+
+.carousel-component ul.carousel-vertical { 
+	width: auto;
+	height: 10000000px;
+	margin-top: 5px;
+}
+
+.carousel-component .carousel-clip-region { 
+	overflow: hidden;
+	margin: 0px auto;
+	position: relative; 
+}
+
+/**
+ * Safe to override. It is safe to override background, padding, margin, color,
+ * text alignment, fonts, etc. Define a separate CSS file and override your style
+ * preferences.
+ **/
+
+.carousel-component { 
+	background:#3F3F3F;
+	padding: 0;
+	color:#618cbe;
+}
+.carousel-component ul.carousel-list { 
+	margin: 0;
+	padding: 0;
+}
+.carousel-component .carousel-list li { 
+	text-align:center;
+	margin:0;
+	padding:0px;
+	font:10px verdana,arial,sans-serif;
+	color:#666;
+}
+
+#large-carousel { 
+  background: #AAD4EE;
+	margin-bottom: 10px;
+	float: left;
+	width: 387px;
+	height: 144px;
+}
+
+#large-carousel .carousel-list li { 
+	margin:4px 10px 0px 10px;
+	width: 106px; 
+	border: 0px solid green;
+	padding: 10px;
+	padding-top:  15px;
+	margin: 0;
+	color: #E3EDFA;
+}
+
+#large-carousel .carousel-list li img { 
+	border:1px solid #999;
+	display:block; 
+}
+
+/* BUTTONS */
+#prev-arrow-container, #next-arrow-container { 
+	float:left;
+	margin: 0;
+	padding: 0;
+}
+
+#next-arrow { 
+    cursor:pointer; 
+}
+
+#prev-arrow { 
+    cursor:pointer; 
+}
+
+/* Overlay */
+#large-carousel-overlay {
+  width: 200px;
+  height: 80px;
+  background-color:  #FFF;
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  padding-top: 10px;
+  z-index: 100;
+  color: #000;
+  border:1px dotted #000;	
+	text-align: center;
+	font-size: 24px;
+  filter:alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}
+
+#viewer-nav-carousel { 
+  background: #aaa;
+	margin-bottom: 0px;
+	width: 95px;
+	height: 205px;
+}
+
+#viewer-nav-carousel .carousel-list li { 
+    margin:0;
+    width: 100px; 
+    border: 0px solid green;
+    padding: 0px;
+    padding-top:  5px;
+    margin: 0;
+    color: #E3EDFA;
+}
+
+#viewer-nav-carousel .carousel-list li img { 
+    border:1px solid #999;
+    display:block; 
+}
+
+/* BUTTONS */
+#viewer-nav-prev-arrow-container, #viewer-nav-next-arrow-container { 
+    margin: 0;
+    padding: 0;
+		height: 27px;
+}
+
+#viewer-nav-next-arrow { 
+    cursor:pointer; 
+}
+
+#viewer-nav-prev-arrow { 
+    cursor:pointer; 
+}
+
+/* Overlay */
+#viewer-nav-carousel-overlay {
+  width: 200px;
+  height: 80px;
+  background-color:  #FFF;
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  padding-top: 10px;
+  z-index: 100;
+  color: #000;
+  border:1px dotted #000;	
+	text-align: center;
+	font-size: 24px;
+  filter:alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}

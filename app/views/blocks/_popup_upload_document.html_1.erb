@@ -1,0 +1,32 @@
+<div class="container">
+  
+  <div class="">
+    <div id="document_frm<%=@block.id%>"  style="display:block">
+      <% form_for(:attachment_metadata, :url => { :action => "upload_document" ,:block_id => @block.id}, :html => { :multipart => true }) do |form| %>           
+        <b>Select document type</b>(<a onclick="disappear();" href="#">X</a>)<br />
+        <div class="left-element" >
+          <%= select_tag 'category_list', options_for_select(@categories.map {|u| [u.name,u.name]}) ,:onchange => remote_function(:url => {:action => :show_expiry_date, :block_id => @block.id}, :with => "'category_name='+value", :position => "replace")%>   
+        </div>  
+        <br /><br />
+        <span id="expiry_date<%=@block.id%>" style="display:none" >
+          <%= date_select("post", "expiry_date") %>     
+        </span>
+      
+      
+        <div id="form_upload<%=@block.id%>" style="display:block;width:400px">
+          <%= form.file_field :uploaded_data %>
+          <%= submit_tag 'SUBMIT' %>  
+        </div> 
+     <% end %>  
+        
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+

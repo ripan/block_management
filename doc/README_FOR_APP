@@ -1,0 +1,29 @@
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+RUBY  - ruby 1.8.6
+RAILS - rails 2.3.2
+
+Steps for setting up the application
+
+1) rake db:create 
+   rake db:migrate
+   rake db:fixtures:load
+  (for dropping/creating database, runing migrations and loading fixtures)
+
+   or you can use rake db:bootstrap(custom method)
+ 
+   Currently I have considered first 10 blocks.We can populate it through fixtures
+   We can add more blocks through "Create Blocks" link in "Block Management" screen  
+
+2) mongrel_rails :start or ruby script/server
+
+3) http://localhost:3000/
+
+4) "Create Blocks" and  "Create categories" links are provided to create blocks and categories which will be populated on block management screen.
+    We can add or delete blocks and categories and it will be reflected in "Block Management" screen.
+    So we can store more different types of documents and it allows relatively easy addition of new document types.
+
+5) "Upload" link will bring popup where we can select and upload document based on the document type (as per the requirements)
+   NOTE: Document size should be more than 2MB. We shouldn't be able to upload Asbestos Survey for blocks built before 1st Jan 2000.
+   We can change the date in /config/settings.yml so it will be our default date

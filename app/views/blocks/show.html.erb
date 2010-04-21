@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @block.name %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%=h @block.postcode %>
+</p>
+
+<p>
+  <b>Build date:</b>
+  <%=h @block.build_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_block_path(@block) %> |
+<%= link_to 'Back', blocks_path %>

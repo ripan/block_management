@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+   
+   background-color:white;border: medium solid green;height:150px
+   }
+
+.left-element {
+   position: absolute;
+   margin-left: 20px;
+   width: 50%;
+   }
+
+.right-element {
+   position: absolute;
+   right: 0;
+   width: 50%;
+   text-align: right; /* depends on element width */
+   } 

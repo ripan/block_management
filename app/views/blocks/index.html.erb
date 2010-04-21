@@ -1,0 +1,25 @@
+<h1>Listing blocks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Postcode</th>
+    <th>Build date</th>
+  </tr>
+
+<% @blocks.each do |block| %>
+  <tr>
+    <td><%=h block.name %></td>
+    <td><%=h block.postcode %></td>
+    <td><%=h block.build_date %></td>
+    <td><%= link_to 'Show', block %></td>
+    <td><%= link_to 'Edit', edit_block_path(block) %></td>
+    <td><%= link_to 'Destroy', block, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New block', new_block_path %><br />
+<%= link_to 'Back to block management',{:action =>"list"} %>

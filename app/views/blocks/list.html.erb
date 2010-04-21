@@ -1,0 +1,58 @@
+<div >
+  <center>
+    <h1>Block management</h1>
+    
+    <table cellpadding="7" cellspacing="0" border="1px">
+      <tr>
+        <th>Name</th>
+        <th>Postcode</th>
+        <th>Build date</th>
+        <!-- Showing the categories -->
+<% @categories.each do |category| %>
+          <th><%= category.name %></th>
+        <% end %>
+      </tr>
+      <% @blocks.each do |block| %><!-- outer block iteraton starts-->
+        <tr>
+          <td><%= block.name %></td>
+          <td><%= block.postcode %></td>
+          <td><%= block.build_date %></td>
+          <% @categories.each do |category| %><!-- categories iteration starts -->
+            <td>
+              <% if !block.documents.blank?%><!-- start if-->
+                <% block.documents.each do |doc| %><!-- block documents iteration starts --> 
+                                                                                                   
+                  <% if category.name ==  doc.category.name %>
+                    <br /><%= doc.created_at.strftime("%Y-%m-%d") %> 
+                          (<%=link_to "view", {:action => "download",:id=>doc.id}%>|<%=link_to "delete", {:action => "delete_document",:id=>doc.id}%>) 
+                    <br />
+                    <div>
+                      <%if  category.has_expiry_date %>
+                        <% if doc.expired? %> 
+                          (EXPIRED <%= doc.expiry_date %>)
+                        <% else %>
+                          (expires <%= doc.expiry_date %>)  
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                                                               
+                <% end %><!-- block documents iteration ends --> 
+              <% else %>
+                Not Uploaded
+              <% end %><!-- end if-->
+            </td>
+          <% end %><!-- categories iteration ends -->                                  
+          <td>
+            <%= link_to_remote "upload", :url=>{:action => "show_upload_form",:id => block.id} %>
+                                                                                        
+          </td>
+        </tr>
+      <% end %><!-- outer block iteraton ends-->                                                   
+    </table>
+    
+    
+<%= link_to 'Create Blocks', blocks_path %> | 
+<%= link_to 'Create categories', categories_path %>
+  </center>
+</div>

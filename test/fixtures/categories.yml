@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+1:
+  id: 1
+  name: Management Agreement
+  has_expiry_date: 0
+
+2:
+  id: 2
+  name: Fire Risk Assessment
+  has_expiry_date: 1
+
+3:
+  id: 3
+  name: Asbestos Survey
+  has_expiry_date: 0
