@@ -24,7 +24,7 @@
                                                                                                    
                   <% if category.name ==  doc.category.name %>
                     <br /><%= doc.created_at.strftime("%Y-%m-%d") %> 
-                          (<%=link_to "view", {:action => "download",:id=>doc.id}%>|<%=link_to "delete", {:action => "delete_document",:id=>doc.id}%>) 
+                          (<%=link_to "view", {:action => "download",:id=>doc.id}%>|<%=link_to "delete", {:action => "delete_document",:id=>doc.id},{:confirm => "Are You sure you want to delete this document ?"}%>) 
                     <br />
                     <div>
                       <%if  category.has_expiry_date %>

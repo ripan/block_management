@@ -2,7 +2,11 @@ Use this README file to introduce your application and point to useful places in
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
 
 RUBY  - ruby 1.8.6
-RAILS - rails 2.3.2
+
+Gems Required
+rails 2.3.2
+rspec (1.3.0)
+rspec-rails (1.3.2)
 
 Steps for setting up the application
 
@@ -27,3 +31,5 @@ Steps for setting up the application
 5) "Upload" link will bring popup where we can select and upload document based on the document type (as per the requirements)
    NOTE: Document size should be more than 2MB. We shouldn't be able to upload Asbestos Survey for blocks built before 1st Jan 2000.
    We can change the date in /config/settings.yml so it will be our default date
+
+6) API Documentation for "block_management" is available at "/block_management/doc/app/index.html"
