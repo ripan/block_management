@@ -1,5 +1,6 @@
 (in /home/ripan/RailsProjects/block_management)
 rake db:abort_if_pending_migrations       # Raises an error if there are pending migrations
+rake db:bootstrap                         # Drop database and run migrations and fixtures
 rake db:charset                           # Retrieves the charset for the current environment's database
 rake db:collation                         # Retrieves the collation for the current environment's database
 rake db:create                            # Create the database defined in config/database.yml for the current RAILS_ENV
@@ -32,6 +33,7 @@ rake doc:clobber_plugins                  # Remove plugin documentation
 rake doc:clobber_rails                    # Remove rdoc products
 rake doc:guides                           # Generate Rails guides
 rake doc:plugins                          # Generate documentation for all installed plugins
+rake doc:plugins:attachment_fu            # Generate documentation for the attachment_fu plugin
 rake doc:rails                            # Build the RDOC HTML Files
 rake doc:reapp                            # Force a rebuild of the RDOC files
 rake doc:rerails                          # Force a rebuild of the RDOC files
